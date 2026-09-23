@@ -4,14 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import logo from "@/assets/book.ico";
-import {
-  FiBookOpen,
-  FiChevronRight,
-  FiHome,
-  FiMenu,
-  FiUser,
-  FiX,
-} from "react-icons/fi";
+import { FiBookOpen, FiChevronRight, FiHome, FiUser } from "react-icons/fi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,17 +19,35 @@ const Navbar = () => {
         <div className="navbar mx-auto h-14 max-w-7xl px-4 sm:px-6">
           {/* ================= MOBILE ================= */}
           <div className="flex w-full items-center justify-between lg:hidden">
-            {/* Menu Button */}
+            {/* Animated Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
               className="flex h-10 w-10 items-center justify-center rounded-xl text-gray-700 transition hover:bg-gray-100"
             >
-              {menuOpen ? (
-                <FiX className="text-xl" />
-              ) : (
-                <FiMenu className="text-xl" />
-              )}
+              <span className="flex w-5 flex-col gap-[5px]">
+                {/* Top line */}
+                <span
+                  className={`block h-[2px] w-5 rounded-full bg-gray-700 transition-all duration-300 ${
+                    menuOpen ? "translate-y-[7px] rotate-45" : ""
+                  }`}
+                />
+
+                {/* Middle line */}
+                <span
+                  className={`block h-[2px] w-5 rounded-full bg-gray-700 transition-all duration-300 ${
+                    menuOpen ? "scale-x-0 opacity-0" : ""
+                  }`}
+                />
+
+                {/* Bottom line */}
+                <span
+                  className={`block h-[2px] w-5 rounded-full bg-gray-700 transition-all duration-300 ${
+                    menuOpen ? "-translate-y-[7px] -rotate-45" : ""
+                  }`}
+                />
+              </span>
             </button>
 
             {/* Center Logo */}
