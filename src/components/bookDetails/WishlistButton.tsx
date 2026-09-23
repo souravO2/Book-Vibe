@@ -7,7 +7,7 @@ import { FiHeart } from "react-icons/fi";
 import { toast } from "sonner";
 
 const WishlistButton = ({book}:{book: BookType}) => {
-  const {wishlist, setWishlist} = useContext(BooksContext);
+  const { setWishlist} = useContext(BooksContext);
 
   const handleAddToWishlist = () =>{
     setWishlist((prev : BookType[]) => [...prev, book]);

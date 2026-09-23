@@ -7,7 +7,9 @@ import { FaStar } from "react-icons/fa";
 import { FiBookOpen, FiCalendar } from "react-icons/fi";
 
 const getBooks = async () => {
-  const res = await fetch("http://localhost:3000/booksData.json");
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,
+  );
   return await res.json();
 };
 
@@ -139,8 +141,8 @@ const BookDetailsPage = async ({
 
             {/* Actions */}
             <div className="flex flex-col gap-3 sm:flex-row">
-              <ReadButton  book={book}/>
-              <WishlistButton book={book}/>
+              <ReadButton book={book} />
+              <WishlistButton book={book} />
             </div>
           </div>
         </div>

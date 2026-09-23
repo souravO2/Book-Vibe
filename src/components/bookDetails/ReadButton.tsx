@@ -7,7 +7,7 @@ import { FiBookOpen } from "react-icons/fi";
 import { toast } from "sonner";
 
 const ReadButton = ({ book }: { book: BookType }) => {
-  const { readBooks, setReadBooks } = useContext(BooksContext);
+  const { setReadBooks } = useContext(BooksContext);
 
   const handleReadBook = () => {
     setReadBooks((prev: BookType[]) => [...prev, book]);
