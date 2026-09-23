@@ -14,7 +14,7 @@ interface BookCardProps {
 
 const BookCard = ({ book }: BookCardProps) => {
   return (
-    <article className="group mx-2 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-xl">
+    <article className="group mx-4 sm:mx-0 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-xl">
       {/* Book Image */}
       <div className="relative h-120 w-full overflow-hidden bg-gray-100">
         <Image
